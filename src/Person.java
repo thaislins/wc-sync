@@ -1,27 +1,34 @@
+public class Person extends Thread {
+    private boolean isWoman;
+    private int duration;
+    private WashroomManager washroomManager;
 
-public class Person {
+    public Person(boolean isWoman, int duration, String name, WashroomManager washroomManager) {
+        super(name);
+        this.isWoman = isWoman;
+        this.duration = duration;
+        this.washroomManager = washroomManager;
+    }
 
-	private boolean isWoman;
-	private int duration;
+    public boolean isWoman() {
+        return isWoman;
+    }
 
-	public Person(boolean isWoman, int duration) {
-		this.isWoman = isWoman;
-		this.duration = duration;
-	}
+    public void setWoman(boolean woman) {
+        isWoman = woman;
+    }
 
-	public boolean isWoman() {
-		return isWoman;
-	}
+    public int getDuration() {
+        return duration;
+    }
 
-	public void setWoman(boolean isWoman) {
-		this.isWoman = isWoman;
-	}
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
 
-	public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
+    @Override
+    public void run() {
+        super.run();
+        washroomManager.nextInLine(this);
+    }
 }
