@@ -1,16 +1,22 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MainSemaphore {
     public static void main(String[] args) {
-        ArrayList<Person> people = new ArrayList<>();
-        WashroomManager manager = new WashroomManagerSemaphore(new Washroom(3));
-        people.add(new Person(true, 2, "Maria", manager));
-        people.add(new Person(false, 1, "Jose", manager));
-        people.add(new Person(true, 3, "Maria", manager));
-        people.add(new Person(false, 4, "John", manager));
+        Scanner scanner = new Scanner(System.in);
 
-        for (Person p : people) {
-            p.start();
+        System.out.print("Define maximum washroom capacity: ");
+        int maxCapacity = scanner.nextInt();
+        System.out.print("Define how many people will use the washroom: ");
+        int maxPeople = scanner.nextInt();
+        System.out.print("Define the maximum amount of time a person can spend inside the washroom: ");
+        int maxDuration = scanner.nextInt();
+
+        WashroomManagerSemaphore manager = new WashroomManagerSemaphore(new Washroom(maxCapacity));
+
+        for (int i = 0; i < maxPeople; i++) {
+            Person person = PersonGenerator.generate(maxDuration, manager);
+            person.start();
         }
     }
 }
