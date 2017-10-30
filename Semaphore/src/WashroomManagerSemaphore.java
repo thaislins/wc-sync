@@ -14,7 +14,7 @@ public class WashroomManagerSemaphore {
         while (!entered) {
             try {
                 semaphore.acquire();
-                if (washroom.isEmpty() || (!washroom.isFull() && washroom.hasWoman() == person.isWoman())) {
+                if (washroom.isEmpty() || (!washroom.isEmpty() && !washroom.isFull() && washroom.hasWoman() == person.isWoman())) {
                     entered = true;
                     useWashroom(person);
                 }
