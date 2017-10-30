@@ -25,8 +25,12 @@ public class Washroom {
         this.maxCapacity = maxCapacity;
     }
 
-    public void addPeople(Person person) {
+    public void addPerson(Person person) {
         peopleInside.add(person);
+    }
+
+    public void removePerson(Person person) {
+        peopleInside.remove(person);
     }
 
     public boolean isFull() {
@@ -35,5 +39,9 @@ public class Washroom {
 
     public boolean isEmpty() {
         return peopleInside.size() == 0;
+    }
+
+    public boolean hasWoman() {
+        return peopleInside.get(0).isWoman();
     }
 }

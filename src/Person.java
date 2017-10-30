@@ -1,9 +1,9 @@
 public class Person extends Thread {
     private boolean isWoman;
     private int duration;
-    private WashroomManager washroomManager;
+    private WashroomManagerSemaphore washroomManager;
 
-    public Person(boolean isWoman, int duration, String name, WashroomManager washroomManager) {
+    public Person(boolean isWoman, int duration, String name, WashroomManagerSemaphore washroomManager) {
         super(name);
         this.isWoman = isWoman;
         this.duration = duration;
@@ -29,6 +29,6 @@ public class Person extends Thread {
     @Override
     public void run() {
         super.run();
-        washroomManager.nextInLine(this);
+        washroomManager.enter(this);
     }
 }
