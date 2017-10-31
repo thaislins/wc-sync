@@ -7,7 +7,7 @@
 public class Person extends Thread {
     private boolean isWoman;
     private int duration;
-    private WashroomManagerSemaphore washroomManager;
+    private WashroomManagerMonitor washroomManager;
 
     /**
      * Parameterized constructor
@@ -16,7 +16,7 @@ public class Person extends Thread {
      * @param name defines name of a person
      * @param washroomManager object used for managing washroom traffic
      */
-    public Person(boolean isWoman, int duration, String name, WashroomManagerSemaphore washroomManager) {
+    public Person(boolean isWoman, int duration, String name, WashroomManagerMonitor washroomManager) {
         super(name);
         this.isWoman = isWoman;
         this.duration = duration;
@@ -59,5 +59,11 @@ public class Person extends Thread {
     public void run() {
         super.run();
         washroomManager.enter(this);
+        try {
+            washroomManager.useWashroom(this);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        washroomManager.exit(this);
     }
 }

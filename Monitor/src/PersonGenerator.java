@@ -12,7 +12,7 @@ public class PersonGenerator {
      * @param manager object that manages traffic inside a washroom
      * @return object of class Person
      */
-    public static Person generate(int maxDuration, WashroomManagerSemaphore manager) {
+    public static Person generate(int maxDuration, WashroomManagerMonitor manager) {
         boolean isWoman = new Random().nextBoolean();
         int duration = new Random().nextInt(maxDuration) + 1;
         int id = new Random().nextInt(100);
