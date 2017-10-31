@@ -1,12 +1,12 @@
 import java.util.Scanner;
 /**
  * Class that executes a simulation of washroom
- * synchronization with semaphores
+ * synchronization with monitors
  *
  * @author  Elton Vieira, Thais Lins
  * @since   2017-10-25
  */
-public class MainSemaphore {
+public class MainMonitor {
     /**
      * Main method
      * @param args Unused.
@@ -27,7 +27,7 @@ public class MainSemaphore {
         System.out.print("Define the maximum amount of time a person can spend inside the washroom: ");
         int maxDuration = scanner.nextInt();
 
-        WashroomManagerSemaphore manager = new WashroomManagerSemaphore(new Washroom(maxCapacity));
+        WashroomManagerMonitor manager = new WashroomManagerMonitor(new Washroom(maxCapacity));
 
         for (int i = 0; i < maxPeople; i++) {
             Person person = PersonGenerator.generate(maxDuration, manager);
