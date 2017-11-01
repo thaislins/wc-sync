@@ -1,8 +1,8 @@
 /**
  * Class that simulates a person
  *
- * @author  Elton Vieira, Thais Lins
- * @since   2017-10-25
+ * @author Elton Vieira, Thais Lins
+ * @since 2017-10-25
  */
 public class Person extends Thread {
     private boolean isWoman;
@@ -11,9 +11,10 @@ public class Person extends Thread {
 
     /**
      * Parameterized constructor
-     * @param isWoman defines whether the person is a woman or not
-     * @param duration  defines duration of time that a person may spend in a washroom
-     * @param name defines name of a person
+     *
+     * @param isWoman         defines whether the person is a woman or not
+     * @param duration        defines duration of time that a person may spend in a washroom
+     * @param name            defines name of a person
      * @param washroomManager object used for managing washroom traffic
      */
     public Person(boolean isWoman, int duration, String name, WashroomManagerSemaphore washroomManager) {
@@ -25,6 +26,7 @@ public class Person extends Thread {
 
     /**
      * Method that returns whether a person is a woman or not
+     *
      * @return boolean value
      */
     public boolean isWoman() {
@@ -33,6 +35,7 @@ public class Person extends Thread {
 
     /**
      * Method that defines whether a person is a woman or not
+     *
      * @param woman
      */
     public void setWoman(boolean woman) {
@@ -41,6 +44,7 @@ public class Person extends Thread {
 
     /**
      * Method that returns duration of time a person can spend inside a washroom
+     *
      * @return integer that specifies duration
      */
     public int getDuration() {
@@ -49,7 +53,8 @@ public class Person extends Thread {
 
     /**
      * Method that defines duration of time a person can spend inside a washroom
-     * @param  duration
+     *
+     * @param duration
      */
     public void setDuration(int duration) {
         this.duration = duration;

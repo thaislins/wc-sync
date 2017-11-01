@@ -1,14 +1,16 @@
 import java.util.Scanner;
+
 /**
  * Class that executes a simulation of washroom
  * synchronization with semaphores
  *
- * @author  Elton Vieira, Thais Lins
- * @since   2017-10-25
+ * @author Elton Vieira, Thais Lins
+ * @since 2017-10-25
  */
 public class MainSemaphore {
     /**
      * Main method
+     *
      * @param args Unused.
      */
     public static void main(String[] args) {

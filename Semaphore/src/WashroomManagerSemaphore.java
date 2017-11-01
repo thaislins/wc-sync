@@ -1,10 +1,11 @@
 import java.util.concurrent.Semaphore;
+
 /**
  * Class that manages traffic inside a washroom
  * with the use of semaphores
  *
- * @author  Elton Vieira, Thais Lins
- * @since   2017-10-25
+ * @author Elton Vieira, Thais Lins
+ * @since 2017-10-25
  */
 public class WashroomManagerSemaphore {
     private Semaphore semaphore;
@@ -12,6 +13,7 @@ public class WashroomManagerSemaphore {
 
     /**
      * Parameterized constructor
+     *
      * @param washroom object that defines a washroom to be managed
      */
     public WashroomManagerSemaphore(Washroom washroom) {
@@ -22,6 +24,7 @@ public class WashroomManagerSemaphore {
     /**
      * Method that simulates the act of a person entering a washroom
      * with the use of semaphores
+     *
      * @param person object that enters the washroom
      */
     public void enter(Person person) {
@@ -43,6 +46,7 @@ public class WashroomManagerSemaphore {
 
     /**
      * Method that adds and removes a person from a washroom
+     *
      * @param person
      */
     public void useWashroom(Person person) throws InterruptedException {
@@ -56,9 +60,10 @@ public class WashroomManagerSemaphore {
 
     /**
      * Method that lists actions and amount of people inside a washroom
-     * @param name defines name of person using the washroom
+     *
+     * @param name               defines name of person using the washroom
      * @param peopleInsideAmount defines amount of people inside the washroom
-     * @param entered defines whether a person is entering or exiting a washroom
+     * @param entered            defines whether a person is entering or exiting a washroom
      */
     public synchronized void washroomLog(String name, int peopleInsideAmount, boolean entered) {
         System.out.println("---------------------------------------");
