@@ -1,3 +1,8 @@
+package utils;
+
+import model.Person;
+import model.Washroom;
+
 /**
  * Class that manages traffic inside a washroom
  * with the use of monitors
@@ -37,15 +42,20 @@ public class WashroomManagerMonitor {
     }
 
     /**
-     * Method that adds and removes a person from a washroom
+     * Method that simulates the use of a washroom
      *
      * @param person
      */
-
     public void useWashroom(Person person) throws InterruptedException {
         Thread.sleep(person.getDuration() * 1000);
     }
 
+    /**
+     * Method that simulates the act of a person exiting a washroom
+     * with the use of monitors
+     *
+     * @param person
+     */
     public void exit(Person person) {
         synchronized (washroom) {
             washroom.removePerson(person);

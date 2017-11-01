@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 
 /**
@@ -57,7 +59,7 @@ public class Washroom {
     }
 
     /**
-     * Method that adds a Person object to peopleInside
+     * Method that adds a model.Person object to peopleInside
      *
      * @param person
      */
@@ -66,7 +68,7 @@ public class Washroom {
     }
 
     /**
-     * Method that removes a Person object from peopleInside
+     * Method that removes a model.Person object from peopleInside
      *
      * @param person
      */

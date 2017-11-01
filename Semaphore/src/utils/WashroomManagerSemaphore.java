@@ -1,3 +1,8 @@
+package utils;
+
+import model.Person;
+import model.Washroom;
+
 import java.util.concurrent.Semaphore;
 
 /**

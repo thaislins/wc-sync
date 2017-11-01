@@ -1,3 +1,8 @@
+import model.Person;
+import model.Washroom;
+import utils.PersonGenerator;
+import utils.WashroomManagerSemaphore;
+
 import java.util.Scanner;
 
 /**
