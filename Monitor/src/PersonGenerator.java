@@ -1,15 +1,17 @@
 import java.util.Random;
+
 /**
  * Class that generates a random Person
  *
- * @author  Elton Vieira, Thais Lins
- * @since   2017-10-25
+ * @author Elton Vieira, Thais Lins
+ * @since 2017-10-25
  */
 public class PersonGenerator {
     /**
      * Static method that generates a random person
+     *
      * @param maxDuration maximum time a person is allowed to stay inside a washroom
-     * @param manager object that manages traffic inside a washroom
+     * @param manager     object that manages traffic inside a washroom
      * @return object of class Person
      */
     public static Person generate(int maxDuration, WashroomManagerMonitor manager) {

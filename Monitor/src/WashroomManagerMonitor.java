@@ -1,7 +1,3 @@
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 /**
  * Class that manages traffic inside a washroom
  * with the use of monitors
