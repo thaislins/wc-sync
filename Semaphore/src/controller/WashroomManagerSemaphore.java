@@ -14,6 +14,7 @@ import java.util.concurrent.Semaphore;
  */
 public class WashroomManagerSemaphore {
     private Semaphore semaphore;
+    private Semaphore mutex;
     private Washroom washroom;
 
     /**
@@ -24,6 +25,7 @@ public class WashroomManagerSemaphore {
     public WashroomManagerSemaphore(Washroom washroom) {
         this.washroom = washroom;
         semaphore = new Semaphore(washroom.getMaxCapacity(), true);
+        mutex = new Semaphore(1, true);
     }
 
     /**
@@ -55,11 +57,17 @@ public class WashroomManagerSemaphore {
      * @param person
      */
     public void useWashroom(Person person) throws InterruptedException {
+        mutex.acquire();
         washroom.addPerson(person);
         washroomLog(person.getName(), washroom.getPeopleInside().size(), true);
+        mutex.release();
+
         Thread.sleep(person.getDuration() * 1000);
+
+        mutex.acquire();
         washroom.removePerson(person);
         washroomLog(person.getName(), washroom.getPeopleInside().size(), false);
+        mutex.release();
     }
 
 
@@ -70,7 +78,7 @@ public class WashroomManagerSemaphore {
      * @param peopleInsideAmount defines amount of people inside the washroom
      * @param entered            defines whether a person is entering or exiting a washroom
      */
-    public synchronized void washroomLog(String name, int peopleInsideAmount, boolean entered) {
+    public void washroomLog(String name, int peopleInsideAmount, boolean entered) {
         System.out.println("---------------------------------------");
         System.out.println(name + (entered ? " entered" : " exited"));
         System.out.println("There are " + peopleInsideAmount + " people inside the washroom");
