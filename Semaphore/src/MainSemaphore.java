@@ -1,7 +1,7 @@
 import model.Person;
 import model.Washroom;
-import utils.PersonGenerator;
-import utils.WashroomManagerSemaphore;
+import controller.PersonGenerator;
+import controller.WashroomManagerSemaphore;
 
 import java.util.Scanner;
 

@@ -1,5 +1,7 @@
 package model;
 
+import controller.WashroomManagerSemaphore;
+
 /**
  * Class that simulates a person
  *

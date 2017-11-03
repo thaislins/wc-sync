@@ -1,7 +1,7 @@
 import model.Person;
 import model.Washroom;
-import utils.PersonGenerator;
-import utils.WashroomManagerMonitor;
+import controller.PersonGenerator;
+import controller.WashroomManagerMonitor;
 
 import java.util.Scanner;
 

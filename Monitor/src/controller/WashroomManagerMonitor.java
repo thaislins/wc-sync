@@ -1,4 +1,4 @@
-package utils;
+package controller;
 
 import model.Person;
 import model.Washroom;
@@ -71,7 +71,7 @@ public class WashroomManagerMonitor {
      * @param peopleInsideAmount defines amount of people inside the washroom
      * @param entered            defines whether a person is entering or exiting a washroom
      */
-    public synchronized void washroomLog(String name, int peopleInsideAmount, boolean entered) {
+    public void washroomLog(String name, int peopleInsideAmount, boolean entered) {
         System.out.println("---------------------------------------");
         System.out.println(name + (entered ? " entered" : " exited"));
         System.out.println("There are " + peopleInsideAmount + " people inside the washroom");

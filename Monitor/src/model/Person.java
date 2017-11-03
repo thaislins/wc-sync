@@ -1,5 +1,7 @@
 package model;
 
+import controller.WashroomManagerMonitor;
+
 /**
  * Class that simulates a person
  *
